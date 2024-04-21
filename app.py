@@ -16,30 +16,19 @@ class GetQuestionAndFactsResponse(BaseModel):
     facts: List[str]
     status: str
 
-
- 
-class handler(BaseHTTPRequestHandler):
- 
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type','text/plain')
-        self.end_headers()
-        self.wfile.write('Hello, world!'.encode('utf-8'))
-        return
-
 processed_facts = None
 question = None
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     return "test"
-    # if request.method == 'POST':
-    #     question = request.form.get('question')
-    #     documents = request.form.get('documents').split("\n") #list 
-    #     facts = get_facts(question, documents)
-    #     return render_template('output.html', question=question, facts=facts)
-    # else:
-    #     return render_template('index.html')
+    if request.method == 'POST':
+        question = request.form.get('question')
+        documents = request.form.get('documents').split("\n") #list 
+        facts = get_facts(question, documents)
+        return render_template('output.html', question=question, facts=facts)
+    else:
+        return render_template('index.html')
         
 @app.route('/test', methods=['GET', 'POST'])
 def test():
