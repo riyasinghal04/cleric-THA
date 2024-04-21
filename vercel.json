@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py", // Path to your Flask application entry point
-      "use": "@vercel/python" // Use the Python runtime
+      "src": "app.py", 
+      "use": "@vercel/python" 
     }
   ],
   "routes": [
