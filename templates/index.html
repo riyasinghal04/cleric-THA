@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Log Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Call Log Processor</h1>
+        <form id="input-form" action="/" method="post" onsubmit="return validateForm()">
+            <label for="question">Question:</label><br>
+            <input type="text" id="question" name="question" required><br>
+            <small id="question-error" style="color: red; display: none;">Please provide a question.</small><br> <!-- Error message -->
+            <label for="urls">List of Document URLs (Call Transcripts):</label><br>
+            <textarea id="documents" name="documents" rows="4" cols="50" required></textarea><br>
+            <small id="url-error" style="color: red; display: none;">Please provide at least one URL.</small><br> <!-- Error message -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function validateForm() {
+            var question = document.getElementById("question").value;
+            var documents = document.getElementById("documents").value;
+            var questionError = document.getElementById("question-error");
+            var urlError = document.getElementById("url-error");
+            
+            if (question.trim() === "") { // Check if the question field is empty
+                questionError.style.display = "block"; // Show error message
+                return false; // Prevent form submission
+            } else {
+                questionError.style.display = "none"; // Hide error message if the question is provided
+            }
+            
+            if (documents.trim() === "") { // Check if the textarea for document URLs is empty
+                urlError.style.display = "block"; // Show error message
+                return false; // Prevent form submission
+            } else {
+                urlError.style.display = "none"; // Hide error message if at least one URL is provided
+            }
+            
+            return true; // Allow form submission if all checks pass
+        }
+    </script>
+</body>
+</html>
