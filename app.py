@@ -39,6 +39,10 @@ def home():
         return render_template('output.html', question=question, facts=facts)
     else:
         return render_template('index.html')
+        
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    return "hello"
 
 
 @app.route('/submit_question_and_documents', methods=['POST'])
