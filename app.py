@@ -32,13 +32,14 @@ question = None
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    if request.method == 'POST':
-        question = request.form.get('question')
-        documents = request.form.get('documents').split("\n") #list 
-        facts = get_facts(question, documents)
-        return render_template('output.html', question=question, facts=facts)
-    else:
-        return render_template('index.html')
+    return "test"
+    # if request.method == 'POST':
+    #     question = request.form.get('question')
+    #     documents = request.form.get('documents').split("\n") #list 
+    #     facts = get_facts(question, documents)
+    #     return render_template('output.html', question=question, facts=facts)
+    # else:
+    #     return render_template('index.html')
         
 @app.route('/test', methods=['GET', 'POST'])
 def test():
