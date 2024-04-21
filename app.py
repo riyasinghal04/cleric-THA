@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from typing import List
 import asyncio
 from get_facts import get_facts
+from http.server import BaseHTTPRequestHandler
 
 app = Flask(__name__)
 
@@ -15,6 +16,16 @@ class GetQuestionAndFactsResponse(BaseModel):
     facts: List[str]
     status: str
 
+
+ 
+class handler(BaseHTTPRequestHandler):
+ 
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type','text/plain')
+        self.end_headers()
+        self.wfile.write('Hello, world!'.encode('utf-8'))
+        return
 
 processed_facts = None
 question = None
