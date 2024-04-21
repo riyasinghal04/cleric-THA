@@ -21,7 +21,9 @@ The application will process the input and return relevant facts based on the qu
 - `templates/`: Directory containing HTML templates for the web interface. </br>
     -- index.html: Template for the home page with input fields. </br>
     -- output.html: Template for displaying the output facts.</br>
-- `llm_playground`: Jupyter notebook for testing ML pipeline before integrating it in the app
+- `vercel.json` : Json file for deploying the API endpoint on Vercel
+- `runtime.txt` : Python version to be used for runtime
+- `package.json` : Json file for adding package dependecies for deployment
   
 
 
