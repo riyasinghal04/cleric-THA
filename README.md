@@ -4,7 +4,7 @@
 This Flask application serves as a simple Question Answering system that takes a question and a set of documents(call transcripts) as input, and returns relevant facts based on the input. It provides a web interface for users to interact with.
 
 To run the application, ensure you have Python installed on your system. Then follow these steps:
-1. Clone this repository to your local machine - git clone https://github.com/riyasinghal04/cleric-assignment.git
+1. Clone this repository to your local machine - git clone https://github.com/riyasinghal04/cleric-THA.git
 2. Navigate to the project directory
 3. Install the required dependencies using pip
 4. Start the Flask server by running the following command: python3 app.py
