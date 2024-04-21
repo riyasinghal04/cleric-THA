@@ -21,7 +21,6 @@ question = None
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return "test"
     if request.method == 'POST':
         question = request.form.get('question')
         documents = request.form.get('documents').split("\n") #list 
